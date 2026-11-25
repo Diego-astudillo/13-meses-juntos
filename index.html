@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi Onejita 👑 · 1 año y 1 mes juntos</title>
+<meta name="theme-color" content="#12061c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐰</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Caveat:wght@500;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#12061c; --panel:#1d0a2b; --panel2:#2a0f3d;
+  --pink:#ff5cc8; --pink-soft:#ffb3e6; --paper:#f7d6ea; --ink:#3a1230; --berry:#c2188f;
+  --text:#f3e3f5; --glow:0 0 6px #ff5cc8,0 0 18px rgba(255,92,200,.7);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:14px}
+body{
+  background:radial-gradient(ellipse at 80% -5%,#4a1470 0,transparent 45%),radial-gradient(ellipse at 0 60%,#2d0a46 0,transparent 50%),var(--bg);
+  background-attachment:fixed;
+  color:var(--text);font-family:'Quicksand',sans-serif;line-height:1.6;
+  padding-bottom:calc(100px + env(safe-area-inset-bottom,0px));
+  overflow-x:hidden;
+}
+body.locked{overflow:hidden}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
+h1,h2,.neon{font-family:'Pacifico',cursive;font-weight:400;color:var(--pink-soft);text-shadow:var(--glow)}
+.hand{font-family:'Caveat',cursive;font-weight:700}
+.panel{background:linear-gradient(160deg,rgba(29,10,43,.92),rgba(42,15,61,.92));border:1.5px solid var(--pink);border-radius:20px;padding:22px;box-shadow:0 0 14px rgba(255,92,200,.35),inset 0 0 18px rgba(255,92,200,.08)}
+.sec-title{text-align:center;margin-bottom:18px}
+.sec-title h2{font-size:clamp(1.7rem,6.5vw,2.4rem);line-height:1.3}
+.sec-title p{max-width:46ch;margin:6px auto 0;opacity:.9}
+.kicker{display:block;font-family:'Caveat',cursive;font-weight:700;font-size:1.35rem;color:var(--pink);transform:rotate(-2deg)}
+
+/* estrellas */
+#sky{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.2;animation:tw var(--d,3s) ease-in-out infinite;animation-delay:var(--dl,0s)}
+@keyframes tw{50%{opacity:.95;box-shadow:0 0 6px #ffb3e6}}
+
+/* intro / sobre */
+#intro{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px;
+  background:radial-gradient(circle at 50% 40%,rgba(255,92,200,.25),transparent 55%),rgba(14,4,22,.96);transition:opacity .8s,visibility .8s}
+#intro.gone{opacity:0;visibility:hidden}
+#intro .moonbg{width:min(62vw,260px);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 60px rgba(255,92,200,.6);opacity:.9}
+#intro h1{font-size:clamp(1.8rem,7vw,2.8rem);line-height:1.25}
+#intro p{font-size:1.4rem;color:var(--pink-soft)}
+.bigheart{font-size:4.2rem;line-height:1;background:none;border:0;cursor:pointer;animation:beat 1.2s ease-in-out infinite;filter:drop-shadow(0 0 14px #ff5cc8)}
+.bigheart:focus-visible{outline:3px solid #fff;outline-offset:8px;border-radius:50%}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.12)}}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 0 8px}
+header .logo{font-family:'Pacifico',cursive;font-size:1.5rem;color:var(--pink);text-shadow:var(--glow)}
+#music{background:none;border:1.5px solid var(--pink);color:var(--pink-soft);border-radius:999px;padding:4px 12px;font:600 .85rem 'Quicksand',sans-serif;cursor:pointer}
+
+/* hero */
+.hero{position:relative;display:grid;gap:22px;padding:10px 0 34px;align-items:center}
+.hero-media{position:relative}
+.moon{position:absolute;top:-28px;right:-14px;width:120px;height:120px;border-radius:50%;object-fit:cover;z-index:2;box-shadow:0 0 30px rgba(255,92,200,.7);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.hero-img{position:relative;z-index:1;border-radius:22px;border:2px solid var(--pink);box-shadow:var(--glow);width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+.hero-text{position:relative;z-index:1;text-align:center}
+.hero-text .thanks{font-size:1.5rem;color:var(--pink-soft);transform:rotate(-3deg);display:inline-block;margin-bottom:6px}
+.hero-text h1{font-size:clamp(2.2rem,9vw,3.6rem);line-height:1.15}
+.hero-text h1 b{display:block;color:var(--pink);font-weight:400;font-size:1.25em}
+.hero-text p{margin:14px auto 20px;max-width:34ch;font-size:1.05rem}
+.btn{font-family:'Pacifico',cursive;font-size:1.2rem;color:var(--pink-soft);background:transparent;border:2px solid var(--pink);
+  border-radius:14px;padding:10px 30px;cursor:pointer;box-shadow:var(--glow);transition:transform .2s,background .2s}
+.btn:hover{background:rgba(255,92,200,.18);transform:scale(1.04)}
+.btn:focus-visible,nav a:focus-visible,.gift:focus-visible,.reason:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* secciones */
+section{padding:18px 0}
+.grid2{display:grid;gap:18px}
+.panel h2{font-size:1.5rem;margin-bottom:14px}
+.timeline{list-style:none;position:relative;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;border-left:2px dotted var(--pink)}
+.timeline li{position:relative;margin-bottom:12px}
+.timeline li::before{content:"💗";position:absolute;left:-34px;top:0;font-size:1rem}
+.note{background:var(--paper);color:var(--ink);border-radius:6px 6px 22px 6px;padding:22px;transform:rotate(1deg);box-shadow:0 0 18px rgba(255,92,200,.4);position:relative}
+.note::before{content:"";position:absolute;top:-10px;left:50%;width:90px;height:22px;transform:translateX(-50%) rotate(-3deg);background:rgba(255,92,200,.45);border-radius:2px}
+.note h2{color:var(--berry);text-shadow:none}
+.note ul{list-style:none;font-weight:600}
+.note li{margin-bottom:8px;padding-left:30px;position:relative}
+.note li::before{content:"♡";position:absolute;left:0;color:var(--berry);font-size:1.2rem}
+.promise{text-align:center;font-size:1.1rem}
+.promise .hand{display:block;font-size:1.5rem;color:var(--pink-soft);margin-top:8px}
+
+/* regalos */
+.gifts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.gift{display:block;width:100%;perspective:900px;background:none;border:0;cursor:pointer;color:inherit;font:inherit;text-align:center;min-height:210px;border-radius:18px}
+.gift-in{display:block;position:relative;width:100%;height:100%;min-height:210px;transition:transform .7s cubic-bezier(.3,1.4,.5,1);transform-style:preserve-3d}
+.gift.open .gift-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;gap:4px}
+.front{background:linear-gradient(160deg,#3b1257,#7b2d79);border:1.5px solid var(--pink);box-shadow:0 0 12px rgba(255,92,200,.35)}
+.front .box{font-size:3.2rem;line-height:1;animation:wiggle 2.6s ease-in-out infinite}
+.gift:nth-child(2n) .front .box{animation-delay:.6s}
+@keyframes wiggle{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(-10deg)}90%{transform:rotate(10deg)}95%{transform:rotate(-5deg)}}
+.front .lbl{font-family:'Caveat',cursive;font-weight:700;font-size:1.35rem;color:var(--pink-soft)}
+.front small{opacity:.75;font-size:.8rem}
+.back{transform:rotateY(180deg);background:var(--paper);color:var(--ink);box-shadow:0 0 18px rgba(255,92,200,.45)}
+.back .ico{font-size:2.4rem;line-height:1.1}
+.back b{font-family:'Pacifico',cursive;font-weight:400;color:var(--berry);font-size:1.15rem}
+.back p{font-size:.88rem;line-height:1.4;font-weight:600}
+.gift-count{text-align:center;margin-top:14px;font-family:'Caveat',cursive;font-weight:700;font-size:1.4rem;color:var(--pink-soft)}
+
+/* buenas y malas */
+.weather{display:grid;gap:16px}
+.wcard{border-radius:20px;padding:22px;position:relative;overflow:hidden}
+.wcard h3{font-family:'Pacifico',cursive;font-weight:400;font-size:1.4rem;margin-bottom:10px}
+.wcard ul{list-style:none}
+.wcard li{padding-left:28px;position:relative;margin-bottom:8px}
+.wcard .em{position:absolute;right:14px;top:8px;font-size:3rem;opacity:.9}
+.sun{background:linear-gradient(160deg,#ffd6ec,#ffb3e6);color:var(--ink)}
+.sun h3{color:var(--berry)}
+.sun li::before{content:"☀️";position:absolute;left:0;font-size:.95rem}
+.rain{background:linear-gradient(160deg,#241046,#3a1a63);border:1.5px solid var(--pink);box-shadow:0 0 14px rgba(255,92,200,.35)}
+.rain h3{color:var(--pink-soft);text-shadow:var(--glow)}
+.rain li::before{content:"☂️";position:absolute;left:0;font-size:.95rem}
+.drop{position:absolute;top:-20px;width:1.5px;height:14px;background:linear-gradient(transparent,#ffb3e6);opacity:.55;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(420px)}}
+.vow{text-align:center;margin-top:18px}
+.vow .hand{font-size:clamp(1.7rem,6vw,2.3rem);color:var(--pink-soft);text-shadow:var(--glow);display:block;line-height:1.2}
+.vow p{max-width:48ch;margin:8px auto 0}
+
+.moments{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.polaroid{background:var(--paper);color:var(--ink);padding:8px 8px 6px;border-radius:4px;text-align:center;font-family:'Caveat',cursive;font-size:1.1rem;font-weight:700;line-height:1.2;
+  transform:rotate(var(--r,-2deg));transition:transform .25s}
+.polaroid:nth-child(even){--r:2.5deg}
+.polaroid:hover{transform:rotate(0) scale(1.06)}
+.polaroid span{display:block;font-size:2.2rem;line-height:1.6;background:linear-gradient(135deg,#3b1257,#7b2d79);border-radius:3px;margin-bottom:4px}
+.promises{list-style:none}
+.promises li{margin-bottom:10px;padding-left:34px;position:relative;cursor:pointer;user-select:none}
+.promises li::before{content:"✓";position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--pink);color:#2a0f3d;font-weight:700;text-align:center;line-height:24px;transition:.25s}
+.promises li.off{opacity:.55}.promises li.off::before{content:"";background:transparent;border:2px solid var(--pink)}
+
+/* libro */
+.book{max-width:640px;margin:0 auto;text-align:center}
+.cover{display:flex;justify-content:center;align-items:flex-end;gap:6px;margin-bottom:6px}
+.cover img{width:34%;max-width:130px;border-radius:16px;border:1.5px solid var(--pink);box-shadow:var(--glow)}
+.page{min-height:340px;text-align:left;display:flex;flex-direction:column;justify-content:center;touch-action:pan-y}
+.page.turn{animation:turn .45s ease}
+@keyframes turn{from{opacity:0;transform:translateX(var(--from,24px)) rotateY(8deg)}to{opacity:1;transform:none}}
+.page .cap{font-family:'Caveat',cursive;font-weight:700;color:var(--pink);font-size:1.2rem}
+.page h2{margin-bottom:12px}
+.page p{margin-bottom:12px}
+.page p.q{font-family:'Caveat',cursive;font-weight:700;font-size:1.45rem;color:var(--pink-soft);text-align:center}
+.ctrl{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:8px}
+.ctrl .btn{font-size:1rem;padding:8px 18px}
+.ctrl .btn:disabled{opacity:.35;cursor:default;transform:none}
+.count{font-family:'Caveat',cursive;font-size:1.3rem;color:var(--pink-soft)}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+.dots i{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--pink);transition:.3s}
+.dots i.on{background:var(--pink);box-shadow:var(--glow);width:20px;border-radius:6px}
+.hint{font-size:.85rem;opacity:.7;margin-top:8px}
+
+/* final */
+.final{text-align:center;padding:36px 0 10px}
+.final h2{font-size:clamp(1.8rem,7vw,2.8rem);line-height:1.3}
+.final p{margin-top:12px;font-size:1.05rem}
+.plushies{display:flex;justify-content:center;gap:14px;margin-bottom:10px}
+.plushies img{width:92px;height:92px;object-fit:cover;border-radius:50%;border:2px solid var(--pink);box-shadow:var(--glow);animation:float 5s ease-in-out infinite}
+.plushies img:last-child{animation-delay:-2.5s}
+.tap{margin-top:22px}
+.tap .bigheart{font-size:3.6rem}
+#tapmsg{display:block;min-height:2.2em;font-family:'Caveat',cursive;font-weight:700;font-size:1.5rem;color:var(--pink-soft);margin-top:6px}
+
+/* nav inferior */
+nav{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));max-width:600px;margin:0 auto;z-index:10;
+  display:flex;justify-content:space-around;background:rgba(18,6,28,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid var(--pink);border-radius:20px;padding:7px 3px;box-shadow:var(--glow)}
+nav a{flex:1;text-align:center;text-decoration:none;color:var(--pink-soft);font-size:.7rem;font-weight:600;padding:4px 1px;border-radius:12px;transition:background .2s}
+nav a.on{background:rgba(255,92,200,.22)}
+nav a span{display:block;font-size:1.25rem;line-height:1.2}
+
+/* corazones flotantes */
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:60}
+.fh{position:absolute;bottom:-30px;animation:up linear forwards;filter:drop-shadow(0 0 6px #ff5cc8)}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+
+/* aparecer al hacer scroll */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(min-width:760px){
+  .hero{grid-template-columns:1fr 1fr;gap:36px}
+  .hero-text{text-align:left}.hero-text p{margin-left:0}
+  .grid2,.weather{grid-template-columns:1fr 1fr}
+  .gifts{grid-template-columns:repeat(3,1fr)}
+  .moon{width:150px;height:150px;top:-36px;right:-30px}
+  nav a{font-size:.78rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}.fh{display:none}.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="locked">
+<div id="sky" aria-hidden="true"></div>
+<div id="hearts" aria-hidden="true"></div>
+
+<!-- Pantalla de entrada -->
+<div id="intro" role="dialog" aria-label="Bienvenida">
+  <img class="moonbg" src="assets/luna.png" alt="">
+  <span class="kicker">Tengo algo para ti…</span>
+  <h1 class="neon">Mi Onejita 🐰👑</h1>
+  <button class="bigheart" id="open" type="button" aria-label="Abrir mi regalo">💖</button>
+  <p class="hand">Toca el corazón</p>
+</div>
+
+<div class="wrap">
+  <header><span class="logo">♡ Mi Onejita ♡</span><span aria-hidden="true">👑</span></header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-media">
+        <img class="moon" src="assets/luna.png" alt="" aria-hidden="true">
+        <img class="hero-img" src="assets/osito-y-onejita.png" alt="Un osito fuerte y oscuro abraza con ternura a su onejita reina, que lleva una corona rosa">
+      </div>
+      <div class="hero-text">
+        <span class="hand thanks">Gracias por llegar a mi vida…</span>
+        <h1 class="neon">Feliz <b>1 Año<br>1 Mes</b> Juntos</h1>
+        <p>Mi Onejita, hoy celebramos 1 año y 1 mes de nuestra historia, y quiero que sepas que cada día a tu lado es un regalo.</p>
+        <button class="btn" id="love" type="button">Te amo mucho ♡</button>
+      </div>
+    </section>
+
+    <section id="historia" class="grid2">
+      <div class="panel reveal">
+        <h2>Nuestra Historia ♡</h2>
+        <ul class="timeline">
+          <li>Nos conocimos…</li>
+          <li>Compartimos risas…</li>
+          <li>Superamos retos…</li>
+          <li>Nos apoyamos siempre…</li>
+          <li>Y ahora celebramos 1 año y 1 mes juntos ♡</li>
+        </ul>
+        <p class="hand neon" style="font-size:1.6rem;margin-top:10px;text-align:center">Gracias por ser tú ♡</p>
+      </div>
+      <div class="note reveal">
+        <h2>¿Por qué te amo? ♡</h2>
+        <ul>
+          <li>Porque me haces feliz</li>
+          <li>Porque siempre estás</li>
+          <li>Porque me apoyas</li>
+          <li>Porque confías en mí</li>
+          <li>Porque me dices “mi osito”</li>
+          <li>Porque eres mi onejita</li>
+          <li>Y porque… simplemente eres perfecta ♡</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="panel promise reveal">
+        Siempre estaré aquí para ti, jamás te fallaré y haré todo por ti.
+        <span class="hand">Contigo quiero seguir escribiendo nuestra historia, con más risas, más aventuras y mucho más amor. ♡</span>
+      </div>
+    </section>
+
+    <!-- REGALOS -->
+    <section id="regalos">
+      <div class="sec-title reveal">
+        <span class="kicker">Hecho con todo mi corazón</span>
+        <h2 class="neon">Regalos para ti 🎁</h2>
+        <p>Tengo regalos para ti, mi reina: libros, collares y cositas muy especiales. Toca cada cajita para abrirla.</p>
+      </div>
+      <div class="gifts" id="gifts">
+        <button class="gift reveal" type="button" aria-label="Abrir regalo: libros"><span class="gift-in">
+          <span class="face front"><span class="box">🎁</span><span class="lbl">Regalo n.º 1</span><small>Ábreme</small></span>
+          <span class="face back"><span class="ico">📚</span><b>Libros</b><p>Para que viajes a mil mundos, y en cada página sepas que pensé en ti.</p></span>
+        </span></button>
+        <button class="gift reveal" type="button" aria-label="Abrir regalo: collares"><span class="gift-in">
+          <span class="face front"><span class="box">🎁</span><span class="lbl">Regalo n.º 2</span><small>Ábreme</small></span>
+          <span class="face back"><span class="ico">💎</span><b>Collares</b><p>Para que lleves cerquita de tu corazón un pedacito del mío.</p></span>
+        </span></button>
+        <button class="gift reveal" type="button" aria-label="Abrir regalo: cositas especiales"><span class="gift-in">
+          <span class="face front"><span class="box">🎁</span><span class="lbl">Regalo n.º 3</span><small>Ábreme</small></span>
+          <span class="face back"><span class="ico">🎀</span><b>Cositas especiales</b><p>Detalles pequeñitos que dicen: «te conozco, me acuerdo de ti y pensé en lo que te hace feliz».</p></span>
+        </span></button>
+        <button class="gift reveal" type="button" aria-label="Abrir regalo: patines"><span class="gift-in">
+          <span class="face front"><span class="box">🎁</span><span class="lbl">Regalo n.º 4</span><small>Ábreme</small></span>
+          <span class="face back"><span class="ico">🛼</span><b>Unos patines</b><p>El que todavía quiero darte: verte aprender, reírte, y estar ahí para ayudarte a levantarte.</p></span>
+        </span></button>
+        <button class="gift reveal" type="button" aria-label="Abrir regalo: cartas"><span class="gift-in">
+          <span class="face front"><span class="box">🎁</span><span class="lbl">Regalo n.º 5</span><small>Ábreme</small></span>
+          <span class="face back"><span class="ico">💌</span><b>Cartas y este sitio</b><p>Palabras escritas solo para ti, para que las leas cuando quieras sentirme cerca.</p></span>
+        </span></button>
+        <button class="gift reveal" type="button" aria-label="Abrir regalo: mi corazón"><span class="gift-in">
+          <span class="face front"><span class="box">🎁</span><span class="lbl">Regalo n.º 6</span><small>Ábreme</small></span>
+          <span class="face back"><span class="ico">💗</span><b>Mi corazón</b><p>El regalo más grande: completo, sin condiciones y siempre tuyo.</p></span>
+        </span></button>
+      </div>
+      <p class="gift-count" id="giftCount" aria-live="polite">0 / 6 regalos abiertos</p>
+    </section>
+
+    <!-- EN LAS BUENAS Y EN LAS MALAS -->
+    <section id="siempre-contigo">
+      <div class="sec-title reveal">
+        <span class="kicker">Mi promesa más grande</span>
+        <h2 class="neon">En las buenas y en las malas</h2>
+      </div>
+      <div class="weather">
+        <div class="wcard sun reveal">
+          <span class="em" aria-hidden="true">☀️</span>
+          <h3>En las buenas…</h3>
+          <ul>
+            <li>Celebro cada logro tuyo como si fuera mío.</li>
+            <li>Me río contigo de todo y de nada.</li>
+            <li>Jugamos Mario Kart y apostamos alguito, jajaja.</li>
+            <li>Hacemos planes, viajes y sueños juntos.</li>
+          </ul>
+        </div>
+        <div class="wcard rain reveal" id="rain">
+          <span class="em" aria-hidden="true">🌧️</span>
+          <h3>…y en las malas</h3>
+          <ul>
+            <li>Te tomo de la mano y no te suelto.</li>
+            <li>Te escucho sin juzgarte, el tiempo que necesites.</li>
+            <li>Te abrazo hasta que pase la tormenta.</li>
+            <li>Y buscamos la solución juntos, como equipo.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="vow reveal">
+        <span class="hand">Estaré contigo en las buenas y en las malas, mi Onejita.</span>
+        <p>Cuando todo brille y cuando todo pese. Cuando ganemos y cuando nos toque aprender. Yo voy a estar a tu lado, siempre.</p>
+      </div>
+    </section>
+
+    <section id="recuerdos" class="grid2">
+      <div class="panel reveal">
+        <h2>Nuestros Momentos ♡</h2>
+        <div class="moments">
+          <div class="polaroid"><span>🌙</span>Tú y yo</div>
+          <div class="polaroid"><span>🎮</span>Jugando juntos</div>
+          <div class="polaroid"><span>🐱</span>Tardes juntos</div>
+          <div class="polaroid"><span>💬</span>Hablando de todo</div>
+          <div class="polaroid"><span>👑</span>Mi reina</div>
+          <div class="polaroid"><span>💗</span>Siempre</div>
+        </div>
+      </div>
+      <div class="panel reveal">
+        <h2>Mis Promesas ♡</h2>
+        <ul class="promises" id="promises">
+          <li tabindex="0">Estar siempre a tu lado</li>
+          <li tabindex="0">Cuidarte y protegerte</li>
+          <li tabindex="0">Hacerte feliz todos los días</li>
+          <li tabindex="0">Estar contigo en las buenas y en las malas</li>
+          <li tabindex="0">Cumplir tus sueños juntos</li>
+          <li tabindex="0">Amarte por siempre</li>
+        </ul>
+        <p class="hint">Toca una promesa para marcarla.</p>
+      </div>
+    </section>
+
+    <section id="libro" class="book">
+      <div class="cover reveal">
+        <img src="assets/peluche-osito.png" alt="Osito de peluche con corona">
+        <img src="assets/peluche-conejita.png" alt="Conejita de peluche con lazo rosa">
+      </div>
+      <p class="hand neon" style="font-size:1.4rem">Un libro para ti</p>
+      <h2 class="neon" style="font-size:clamp(1.5rem,6vw,2.2rem);margin-bottom:12px">Contigo, a donde sea</h2>
+      <div class="panel page" id="page" aria-live="polite"></div>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <div class="ctrl">
+        <button class="btn" id="prev" type="button">← Anterior</button>
+        <span class="count" id="count"></span>
+        <button class="btn" id="next" type="button">Siguiente →</button>
+      </div>
+      <p class="hint">También puedes deslizar la página con el dedo.</p>
+    </section>
+
+    <section id="siempre" class="panel reveal" style="margin-top:18px">
+      <h2>Eres el amor de mi vida</h2>
+      <p>Amor, siempre cuentas conmigo. Yo intentaré darte todo lo que me pidas y te trataré como una reina. Si necesitas ayuda tienes mi mano y lo solucionamos. En las buenas y en las malas, aquí voy a estar. Nunca olvides que te amo con todo mi ser, y que cuentas conmigo: háblame, que estaré para ti <b style="color:var(--pink)">siempre, siempre</b> ♡</p>
+    </section>
+
+    <section class="final">
+      <div class="plushies"><img src="assets/peluche-osito.png" alt="Osito de peluche"><img src="assets/peluche-conejita.png" alt="Conejita de peluche"></div>
+      <h2>Te amo mucho, mi onejita</h2>
+      <p>Feliz 1 año y 1 mes juntos, mi amor.<br>Que sean muchos meses y años más, mi reina.<br><span class="hand neon" style="font-size:1.6rem">Tú y yo, siempre.</span></p>
+      <div class="tap">
+        <button class="bigheart" id="tapheart" type="button" aria-label="Toca para recibir un te amo">💗</button>
+        <span id="tapmsg" aria-live="polite">Tócalo cuantas veces quieras…</span>
+      </div>
+    </section>
+  </main>
+</div>
+
+<nav aria-label="Navegación">
+  <a href="#inicio"><span>🏠</span>Inicio</a>
+  <a href="#historia"><span>♡</span>Historia</a>
+  <a href="#regalos"><span>🎁</span>Regalos</a>
+  <a href="#recuerdos"><span>☆</span>Recuerdos</a>
+  <a href="#libro"><span>📖</span>Libro</a>
+  <a href="#siempre"><span>∞</span>Siempre</a>
+</nav>
+
+<script>
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* estrellas */
+const sky=document.getElementById('sky');
+for(let i=0;i<70;i++){
+  const s=document.createElement('span');s.className='star';
+  s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+  const z=Math.random()<.2?3:2;s.style.width=s.style.height=z+'px';
+  s.style.setProperty('--d',(2+Math.random()*4)+'s');s.style.setProperty('--dl',(-Math.random()*5)+'s');
+  sky.appendChild(s);
+}
+
+/* lluvia suave en la tarjeta de "las malas" */
+const rain=document.getElementById('rain');
+for(let i=0;i<18;i++){
+  const d=document.createElement('span');d.className='drop';d.setAttribute('aria-hidden','true');
+  d.style.left=Math.random()*100+'%';d.style.animationDuration=(1.2+Math.random()*1.4)+'s';d.style.animationDelay=(-Math.random()*2)+'s';
+  rain.appendChild(d);
+}
+
+/* corazones */
+const box=document.getElementById('hearts');
+function burst(n,icons){
+  if(reduce)return;
+  icons=icons||['💗','💖','💕','👑','🐰','🐻'];
+  for(let i=0;i<n;i++){
+    const h=document.createElement('span');
+    h.className='fh';
+    h.textContent=icons[Math.floor(Math.random()*icons.length)];
+    h.style.left=Math.random()*100+'%';
+    h.style.fontSize=(16+Math.random()*22)+'px';
+    h.style.animationDuration=(3+Math.random()*3)+'s';
+    h.style.animationDelay=(Math.random()*.8)+'s';
+    box.appendChild(h);
+    setTimeout(()=>h.remove(),7000);
+  }
+}
+
+/* entrada */
+const intro=document.getElementById('intro');
+document.getElementById('open').addEventListener('click',()=>{
+  intro.classList.add('gone');document.body.classList.remove('locked');burst(40);
+  setTimeout(()=>intro.remove(),900);
+});
+
+document.getElementById('love').addEventListener('click',()=>burst(30));
+
+/* aparecer al hacer scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* nav activa */
+const links=[...document.querySelectorAll('nav a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const nio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>s&&nio.observe(s));
+
+/* regalos */
+const gifts=[...document.querySelectorAll('.gift')],gc=document.getElementById('giftCount');
+let celebrated=false;
+gifts.forEach(g=>g.addEventListener('click',()=>{
+  const was=g.classList.contains('open');
+  g.classList.toggle('open');
+  if(!was)burst(8,['🎁','💗','✨','🎀']);
+  const n=document.querySelectorAll('.gift.open').length;
+  gc.textContent=n===gifts.length?'¡Todos son tuyos, mi reina! 👑':n+' / '+gifts.length+' regalos abiertos';
+  if(n===gifts.length&&!celebrated){celebrated=true;burst(45,['👑','💖','🎁','🐰','🐻','✨'])}
+}));
+
+/* promesas */
+document.querySelectorAll('#promises li').forEach(li=>{
+  const t=()=>li.classList.toggle('off');
+  li.addEventListener('click',t);
+  li.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});
+});
+
+/* libro */
+const B=[
+["Capítulo I","Nuestro idioma",["Antes éramos como dos niños. Nos escribíamos con stickers, con emojis, con corazoncitos que para nosotros eran todo un idioma. Nos subíamos las cejas, me lanzabas besos, nos cerrábamos los ojitos.","Me acuerdo de la oficina: de irme y, desde lejos, lanzarte un beso o alzarte las cejas, y de que eso bastara para llevarme el día entero sonriendo.","*Todavía te hablo en nuestro idioma."]],
+["Capítulo II","Mi luz",["Cuando llegaste, yo me estaba ahogando. Y llegaste como llega el amanecer a un cuarto que lleva mucho tiempo a oscuras: sin hacer ruido, pero cambiándolo todo.","Guardo la lechona, los almuerzos, los besos en el ascensor que nos daban risa y nervios, y la escapada al último piso, donde te regalé las pijamas.","*No era el lugar lo que hacía especial el momento. Eras tú."]],
+["Capítulo III","Tus historias y tus bromas",["Me encantaba cuando me contabas tus historias, con tus pausas y tus gestos. Cada una era un pedacito de ti que me confiabas, y yo lo guardaba como se guarda todo lo que vale la pena.","Y tus bromas: «me voy para Venezuela», «me voy a ver con mi mozo», solo para ver mi cara. Después te reías y enseguida me lo contabas todo.","*Podría pasarme una noche entera escuchándote, y aun así me parecería poco."]],
+["Capítulo IV","Todo me recuerda a ti",["Veo un libro, una portada, un videojuego, y pienso en ti. Por eso tengo regalos para ti: libros, collares y cositas muy especiales. Todo lo que te he dado salió del corazón, nunca como una deuda ni una condición.","Y hay un regalo que todavía quiero darte: unos patines, para que empieces a patinar. Quiero verte aprender, tambalearte, reírte, y estar ahí para ayudarte a levantarte.","*Un regalo siempre ha querido decir: «te conozco, me acuerdo de ti y pensé en lo que te hace feliz»."]],
+["Capítulo V","Te extraño tanto",["Por las mañanas, cuando algo bonito me pasa y lo primero que pienso es en contártelo. Por las noches, cuando el silencio se vuelve más grande y la cama más fría.","Extraño tu risa, tu voz, y esos apodos que me diste, rulitos y ositos. Tu ausencia a veces me duele, pero la espero con calma.","*Te extraño tanto, mi Onejita."]],
+["Capítulo VI","La vida que sueño contigo",["Quisiera vivir contigo. Despertar y verte, compartir la rutina, aprender a ser hogar. Prefiero resolver mil cosas contigo que ver otros ojos que no vería igual.","Quiero que crezcas, que llegues lejos, y estar ahí celebrando cada logro tuyo.","Y aunque estemos juntos, no quiero que te sientas controlada. Si quieres salir con tus amigos, ve; si quieres hacer algo sola, lo puedes hacer. Tu tiempo es tuyo, y yo siempre te voy a comprender y a atender con todo mi ser.","Y también tengamos tiempo juntos: viajes los dos, o simplemente nos quedamos jugando carreras de Mario y apostamos alguito, jajaja.","*A donde sea, pero contigo. Oye, ¡la amooooo! ♡"]],
+["Capítulo VII","En las buenas y en las malas",["Los días bonitos son fáciles de compartir. Pero yo también quiero estar en los otros: cuando estés cansada, cuando algo te duela, cuando no tengas ganas de hablar.","En esos días no necesitas fingir que estás bien. Solo dame la mano, y caminamos juntos hasta que vuelva a salir el sol.","*En las buenas y en las malas, aquí estoy. Siempre."]],
+["Una carta para ti","Para ti, mi Onejita",["Creo en las almas gemelas, y creo que la mía eres tú. Mi amor por ti no te debe nada. Te espero con calma, sin prisa y sin exigirte nada.","No necesitas responderme ni decidir nada por leer esto. Solo quería que supieras que, detrás de mis errores, hay un corazón que te ama y quiere aprender a amar mejor.","Quiero que nuestra historia sea un libro eterno, y que lo sigamos escribiendo los dos, a nuestro ritmo.","*Te amo, mi Onejita. Siempre y por siempre, tu Rulitos y Ositos."]],
+["Continuará…","Te amo, mi Onejita",["Esta historia no termina aquí. Es un libro eterno, y todavía nos quedan miles de páginas.","*Siempre tuyo, esperándote en la próxima página. ♡"]]
+];
+let pg=0;
+const pEl=document.getElementById('page'),prev=document.getElementById('prev'),next=document.getElementById('next'),cnt=document.getElementById('count'),dots=document.getElementById('dots');
+B.forEach(()=>dots.appendChild(document.createElement('i')));
+function show(dir){
+  const [c,t,ps]=B[pg];
+  pEl.innerHTML='<span class="cap"></span><h2></h2>';
+  pEl.firstChild.textContent=c;pEl.querySelector('h2').textContent=t;
+  ps.forEach(x=>{const p=document.createElement('p');if(x[0]==='*'){p.className='q';p.textContent=x.slice(1)}else p.textContent=x;pEl.appendChild(p)});
+  cnt.textContent=(pg+1)+' / '+B.length;
+  prev.disabled=pg===0;next.disabled=pg===B.length-1;
+  [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===pg));
+  if(dir){pEl.style.setProperty('--from',dir>0?'24px':'-24px');pEl.classList.remove('turn');void pEl.offsetWidth;pEl.classList.add('turn')}
+}
+function go(d){const n=pg+d;if(n<0||n>=B.length)return;pg=n;show(d);if(d>0)burst(4)}
+prev.onclick=()=>go(-1);next.onclick=()=>go(1);
+let sx=null;
+pEl.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+pEl.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)go(dx<0?1:-1);sx=null});
+document.addEventListener('keydown',e=>{
+  const r=pEl.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+  if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);
+});
+show();
+
+/* corazón final */
+const msgs=['Te amo 💗','Te amo muchísimo 💖','Eres mi reina 👑','Mi onejita bonita 🐰','En las buenas y en las malas 🤞','Siempre contigo 🐻','Eres mi lugar seguro 🏡','Te amo infinito ∞','Tú y yo, siempre ♡'];
+let taps=0;const tm=document.getElementById('tapmsg');
+document.getElementById('tapheart').addEventListener('click',()=>{
+  tm.textContent=msgs[taps%msgs.length]+(taps>=msgs.length?'  ×'+(taps+1):'');
+  taps++;burst(8);
+});
+</script>
+</body>
+</html>
